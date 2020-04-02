@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/todo/todo",
+    "pages/todo_keyresult/todo_keyresult",
+    "pages/okr/okr",
+    "pages/okr_edit/okr_edit",
+    "pages/okr_create/okr_create",
+    "pages/okr_detail/okr_detail",
+    "pages/history/history"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "OKR管理",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath":"pages/todo/todo",
+      "text":"Todos"
+    },{
+      "pagePath":"pages/history/history",
+      "text":"History"
+    },{
+      "pagePath":"pages/okr/okr",
+      "text":"OKR"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

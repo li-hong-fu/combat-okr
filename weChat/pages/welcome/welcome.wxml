@@ -1,0 +1,19 @@
+<view class="page-container">
+  <text class="wave"></text>
+  <text class="wave"></text>
+  <text class="wave"></text>
+  <view class="page-content">
+    <view class="page-title">
+      <view class="page-title-Chinese">目标和关键成果</view>
+      <view class="page-title-English">Goals and key outcomes</view>
+    </view>
+    <view class="page-list">
+      <view class="page-item">目标：我想让网站打开快速度一些</view>
+      <view class="page-item">-- 成果：打开速度快30%</view>
+      <view class="page-item">---- todo：替换提及较大的资源库</view>
+      <view class="page-item">---- todo：JavaScript 代码压缩</view>
+      <view class="page-item">---- todo：图片资源压缩和代理</view>
+    </view>
+    <button class="page-button" hover-class="page-button_hover" bindtap="handLogin">立即体验</button>
+  </view>
+</view>
