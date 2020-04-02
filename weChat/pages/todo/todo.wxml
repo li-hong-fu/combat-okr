@@ -1,1 +1,18 @@
-<view class="page-container">todo</view>
+<view class="page-container">
+  <view class="todo-tips">你必须做你不得不做的事</view>
+  <input class="todo-input" type="text" placeholder="请输入你需要完成的事请" placeholder-class="todo-input_placeholder"/>
+  <view class="todo-list">
+    <view class="todo-item" hover-class="todo-item_hover" bindtap="showActionSheet">
+      <view class="todo-title">JavaScript代码压缩</view>
+      <view class="todo-created_time">创建时间:2019/03/31</view>
+    </view>
+    <view class="todo-item" hover-class="todo-item_hover" bindtap="showActionSheet">
+      <view class="todo-title">JavaScript代码压缩</view>
+      <view class="todo-created_time">创建时间:2019/03/31</view>
+    </view>
+    <view class="todo-item" hover-class="todo-item_hover" bindtap="showActionSheet">
+      <view class="todo-title">JavaScript代码压缩</view>
+      <view class="todo-created_time">创建时间:2019/03/31</view>
+    </view>
+  </view>
+</view>

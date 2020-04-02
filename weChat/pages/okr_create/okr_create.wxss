@@ -1,0 +1,62 @@
+.page-container{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+  height: 100%;
+}
+.page-tips{
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.page-form{
+  flex: 1;
+}
+.form-item{
+  background: #f5f5f5;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+.form-title{
+  font-size: 14px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 20px;
+  color: #333;
+  margin-bottom: 4px;
+}
+.form-label{
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-label .form-input{
+  display: block;
+  width: 70%;
+  height: 40px;
+  border: 1px solid #333;
+  padding: 0 8px;
+  font-size: 16px;
+  line-height: 38px;
+}
+.form-label .form-ctrl{
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  color: #fff;
+  line-height: 40px;
+  font-size: 18px;
+  background: #999;
+}
+.form-ctrl_hover{
+  opacity: .5;
+}
+
+.page-container .page-button{
+  width: 100%;
+  background-color: #666;
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 20px;
+}

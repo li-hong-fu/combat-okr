@@ -1,1 +1,12 @@
-<view class="page-container">todo_keyresult</view>
+<view class="page-container">
+  <view class="todo-tips">请选择关键成果 KR （ KeyResult ) 进行绑定</view>
+  <view class="objective-list">
+    <view class="objective-item">
+      <view class="objective-title">目标: 我想让网站打开速度快一些</view>
+      <view class="keyresult-list">
+        <view class="keyresult-item active">打开速度快一些</view>
+        <view class="keyresult-item">感知上页很快</view>
+      </view>
+    </view>
+  </view>
+</view>

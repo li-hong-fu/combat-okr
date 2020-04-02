@@ -1,3 +1,13 @@
 Page({
-  
+  handCreate:function(){
+    console.log(132)
+    wx.navigateTo({
+      url:'/pages/okr_create/okr_create'
+    })
+  },
+  okrActionSheet:function(){
+    wx.showActionSheet({
+      itemList:['查看','编辑','已完成','删除']
+    })
+  }
 })

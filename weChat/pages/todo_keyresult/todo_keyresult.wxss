@@ -1,0 +1,30 @@
+.page-container{
+  padding-top: 20px;
+  width: 90%;
+  margin: auto;
+}
+.todo-tips{
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+}
+.objective-title{
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 5px;
+  font-family: monospace;
+}
+.keyresult-item{
+  line-height: 22px;
+  font-size: 16px;
+  padding: 5px;
+  color: #333;
+  margin-bottom: 10px;
+  border: 1px solid #333;
+  color: #666;
+  font-family: cursive;
+}
+.keyresult-item.active{
+  background: #333;
+  color: #fff;
+}

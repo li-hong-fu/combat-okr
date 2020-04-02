@@ -1,0 +1,55 @@
+.page-container{
+  padding-top: 20px;
+  width: 90%;
+  margin: auto;
+}
+.todo-tips{
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+}
+.todo-item{
+  position: relative;
+  background: #f5f5f5;
+  padding: 10px;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+.todo-item-title{
+  font-size: 16px;
+  line-height: 20px;
+  color: #333;
+  margin-bottom: 4px;
+}
+.todo-item-created_time{
+  padding-left: 20px;
+  font-size: 14px;
+  color: #999;
+  position: relative;
+}
+.todo-item-created_time::after{
+  position: absolute;
+  content: '';
+  background-color: #999;
+  width: 5px;
+  height: 5px;
+  left: 0;
+  top: 40%;
+  border-radius: 50%;
+}
+.todo-item.finished:after{
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 80px;
+  height: 80px;
+  border: 2px solid #999;
+  content: '完成';
+  line-height: 78px;
+  text-align: center;
+  font-size: 22px;
+  color: #999;
+  border-radius: 50%;
+  opacity: .4;
+  transform: rotate(-45deg);
+}
