@@ -1,14 +1,13 @@
 {
   "pages": [
+    "pages/welcome/welcome",
+    "pages/okr_detail/okr_detail",
+    "pages/okr_edit/okr_edit",
     "pages/okr_create/okr_create",
     "pages/okr/okr",
     "pages/history/history",
     "pages/todo_keyresult/todo_keyresult",
-    "pages/todo/todo",
-    "pages/welcome/welcome",
-    "pages/okr_edit/okr_edit",
-    "pages/okr_detail/okr_detail"
-    
+    "pages/todo/todo"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -16,5 +16,5 @@
       </view>
     </view>
   </view>
-  <button class="page-button" hover-class="page-button_hover" bindtap="handCreate">添加 OKR</button>
+  <button class="page-button" hover-class="page-button_hover" bindtap="handCreate">新增</button>
 </view>

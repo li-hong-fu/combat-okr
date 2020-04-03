@@ -1,1 +1,20 @@
-<view class="page-container">okr_edit</view>
+<view class="page-container">
+  <view class="page-tips">编辑 OKR</view>
+  <view class="page-form">
+    <view class="form-item">
+      <view class="form-title">Objective 目标：</view>
+      <view class="form-label">
+        <input type="text" class="form-input" placeholder="请输入你的目标" placeholder-class="form-input_placeholder" />
+        <view class="form-ctrl" hover-class="form-ctrl_hover">+</view>
+      </view>
+    </view>
+    <view class="form-item">
+      <view class="form-title">Keyresult 成果：</view>
+      <view class="form-label">
+        <input type="text" class="form-input" placeholder="请输入你的目标" placeholder-class="form-input_placeholder" />
+        <view class="form-ctrl" hover-class="form-ctrl_hover">-</view>
+      </view>
+    </view>
+  </view>
+  <button class="page-button" hover-class="page-button_hover" bindtap="handEdit">保存</button>
+</view>

@@ -1,1 +1,34 @@
-<view class="page-container">okr_detail</view>
+<view class="page-container">
+  <view class="page-content">
+    <view class="objective-item finished">
+      <view class="objextive-title">我想让网站打开速度快一些</view>
+      <view class="objective-created_time">· 创建时间：2019/03/31</view>
+      <view class="objective-created_time">· 完成时间：2019/03/31</view>
+    </view>
+    <view class="keyresult-list">
+      <view class="keyresult-item finished">
+        <view class="keyresult-info">
+          <view class="keyresult-title">打开速度快30%</view>
+          <view class="keyresult-tag">点击标记</view>
+        </view>
+        <view class="todo-list">
+          <view class="todo-item">
+            <view class="todo-title finished">JavaScript代码压缩</view>
+          </view>
+        </view>
+      </view>
+      <view class="keyresult-item finished">
+        <view class="keyresult-info">
+          <view class="keyresult-title">打开速度快30%</view>
+          <view class="keyresult-tag">点击标记</view>
+        </view>
+        <view class="todo-list">
+          <view class="todo-item">
+            <view class="todo-title">JavaScript代码压缩</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <navigator url="/pages/okr_edit/okr_edit?id={{id}}" class="edit-btn" hover-class="edit-btn_hover">编辑</navigator>
+</view>

@@ -9,8 +9,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
+    "knex": "^0.20.13",
+    "knex-orm": "^1.2.0",
     "koa": "^2.11.0",
+    "koa-body": "^4.1.1",
     "koa-bodyparser": "^4.3.0",
-    "koa-router": "^8.0.8"
+    "koa-router": "^8.0.8",
+    "mysql": "^2.18.1"
   }
 }
