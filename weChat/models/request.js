@@ -1,29 +1,17 @@
-// const interceptorsRequest = (method, url, data, header={})=> {
-//   let params = { method, url, data, header };
-//   let storageUserInfo = wx.getStorageSync('userInfo')
-//   if(storageUserInfo){
-//     header['Authorization'] = `Bearer ${storageUserInfo.token}`
-//   }
-//   return params
-// }
-
 const request = (method, url, data, header) => {
-  // let params = interceptorsRequest(method, url, data, header)
-  // console.log(params)
+  let token = wx.getStorageSync('token')
+  let id = wx.getStorageSync('id')
+  let params = { token, id }
   return new Promise((resolve, reject)=>{
     wx.request({
       method,
       url: url,
-      header: header,
+      header: params,
       data: data,
       success: (res) => {
-        console.log(res)
         resolve(res)
-        console.log(123)
       },
       fail: (err) => {
-        console.log(123123)
-
         reject(err)
       }
     })
@@ -32,7 +20,6 @@ const request = (method, url, data, header) => {
 
 export default {
   post: function (url='', data, header={}) {
-    console.log(url, data)
     return request('POST', url, data, header)
   },
   put: function (url='', data, header={}) {

@@ -1,18 +1,10 @@
 <view class="page-container">
   <view class="todo-tips">你必须做你不得不做的事</view>
-  <input class="todo-input" type="text" placeholder="请输入你需要完成的事请" placeholder-class="todo-input_placeholder"/>
+  <input class="todo-input" type="text" placeholder="请输入你需要完成的事请" placeholder-class="todo-input_placeholder" bindconfirm="todoAdd" value="{{value}}"/>
   <view class="todo-list">
-    <view class="todo-item" hover-class="todo-item_hover" bindtap="showActionSheet">
-      <view class="todo-title">JavaScript代码压缩</view>
-      <view class="todo-created_time">创建时间:2019/03/31</view>
-    </view>
-    <view class="todo-item" hover-class="todo-item_hover" bindtap="showActionSheet">
-      <view class="todo-title">JavaScript代码压缩</view>
-      <view class="todo-created_time">创建时间:2019/03/31</view>
-    </view>
-    <view class="todo-item" hover-class="todo-item_hover" bindtap="showActionSheet">
-      <view class="todo-title">JavaScript代码压缩</view>
-      <view class="todo-created_time">创建时间:2019/03/31</view>
+    <view class="todo-item" hover-class="todo-item_hover" bindtap="showActionSheet" wx:for="{{showData}}" wx:key="unique" data-id="{{item.id}}" data-index="{{index}}">
+      <view class="todo-title">{{item.title}}</view>
+      <view class="todo-created_time">创建时间:{{item.created_time}}</view>
     </view>
   </view>
 </view>

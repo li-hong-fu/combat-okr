@@ -1,9 +1,9 @@
 <view class="page-container">
   <button class="page-button" hover-class="page-button_hover" bindtap="handCreate">添加 OKR</button>
   <view class="okr-list">
-    <view class="okr-item" bindtap="okrActionSheet">
-      <view class="okr-title">我想让网站打开速度快一些</view>
-      <view class="okr-created_time">创建时间:2019/03/31</view>
+    <view class="okr-item {{item.state === 1 ? 'finished' : ''}}" bindtap="okrActionSheet" wx:for="{{Objective}}" wx:key="unique" data-id="{{item.id}}" data-index="{{index}}" data-state="{{item.state}}">
+      <view class="okr-title">{{item.title}}</view>
+      <view class="okr-created_time">创建时间:{{item.created_time}}</view>
     </view>
   </view>
 </view>

@@ -4,3 +4,6 @@ npm-debug.log
 yarn-error.log
 node_modules
 config.js
+
+utils/authCode.js
+middlewares/auth.js

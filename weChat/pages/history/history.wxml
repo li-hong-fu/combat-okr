@@ -1,20 +1,10 @@
 <view class="page-container">
   <view class="todo-tips">已完成的 Todos , 真棒 ～</view>
   <view class="todo-list">
-    <view class="todo-item finished">
-      <view class="todo-item-title">添加Loading</view>
-      <view class="todo-item-created_time">创建时间:2019/03/31</view>
-      <view class="todo-item-created_time">完成时间:2019/03/31</view>
-    </view>
-    <view class="todo-item">
-      <view class="todo-item-title">添加Loading</view>
-      <view class="todo-item-created_time">创建时间:2019/03/31</view>
-      <view class="todo-item-created_time">完成时间:2019/03/31</view>
-    </view>
-    <view class="todo-item">
-      <view class="todo-item-title">添加Loading</view>
-      <view class="todo-item-created_time">创建时间:2019/03/31</view>
-      <view class="todo-item-created_time">完成时间:2019/03/31</view>
+    <view class="todo-item finished" wx:for="{{showData}}" wx:key="{{item.id}}" bindtap="showActionSheet" data-id="{{item.id}}" data-index="{{index}}">
+      <view class="todo-item-title">{{item.title}}</view>
+      <view class="todo-item-created_time">创建时间:{{item.created_time}}</view>
+      <view class="todo-item-created_time">完成时间:{{item.finished_time}}</view>
     </view>
   </view>
 </view>

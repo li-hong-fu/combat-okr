@@ -4,15 +4,15 @@
     <view class="form-item">
       <view class="form-title">Objective 目标：</view>
       <view class="form-label">
-        <input type="text" class="form-input" placeholder="请输入你的目标" placeholder-class="form-input_placeholder" />
-        <view class="form-ctrl" hover-class="form-ctrl_hover">+</view>
+        <input type="text" class="form-input" placeholder="请输入你的目标" placeholder-class="form-input_placeholder" value="{{objective}}" bindinput="handObjective" />
+        <view class="form-ctrl" hover-class="form-ctrl_hover" bindtap="handAddKeyresult">+</view>
       </view>
     </view>
-    <view class="form-item">
-      <view class="form-title">Keyresult 成果：</view>
+    <view class="form-item" wx:for="{{keyresult}}" wx:key="unique">
+      <view class="form-title">Keyresult 成果：{{index + 1}}</view>
       <view class="form-label">
-        <input type="text" class="form-input" placeholder="请输入你的目标" placeholder-class="form-input_placeholder" />
-        <view class="form-ctrl" hover-class="form-ctrl_hover">-</view>
+        <input type="text" class="form-input" placeholder="请输入你的目标" placeholder-class="form-input_placeholder" data-index="{{index}}" value="{{item.title}}" bindinput="handKeyresult" />
+        <view class="form-ctrl" hover-class="form-ctrl_hover" data-index="{{index}}" bindtap="handDeleteKeyresult">-</view>
       </view>
     </view>
   </view>
