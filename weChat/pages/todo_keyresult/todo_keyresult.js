@@ -2,12 +2,21 @@ import todoOkrModel from '../../models/todoKeyresult'
 
 Page({
   data:{
-    okr:''
+    okr:[],
+    id:null
   },
   onLoad:function(options){
     let id = options.id
     todoOkrModel.show(id).then(res => {
-      console.log(res)
+      this.setData({
+        okr:res.data.data,
+        id:id
+      })
+      console.log(this.data.okr)
     })
+  },
+  handleChange:function(event){
+    let todo_id = this.data.id
+    console.log(event)
   }
 })

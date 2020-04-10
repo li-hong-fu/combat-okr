@@ -16,7 +16,7 @@
 }
 .keyresult-item{
   line-height: 22px;
-  font-size: 16px;
+  font-size: 18px;
   padding: 5px;
   color: #333;
   margin-bottom: 10px;

@@ -54,7 +54,10 @@ Page({
   },
   okrState(id,index,status){
     objectiveModel.update(id,{state:status ? 0 : 1}).then(res => {
-      console.log(res)
+      let objectives = this.data.Objective
+      objectives[index].state = status
+      this.setData({Objective:objectives})
+      this.onShow()
     })
   },
   okrDelete:function(id,index){

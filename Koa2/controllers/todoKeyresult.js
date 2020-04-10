@@ -14,15 +14,21 @@ const todoOkrController = {
       let objectiveIds = objective.map(data => data.id)
       
       const keyresult = await Keyresult.all().whereIn("objective_id",objectiveIds)
+
+      const todoKeyresults = await TodoKeyresult.select({todo_id:id})
+      let keyresultIds = todoKeyresults.map(data => data.keyresult_id)
+
       let okr = []
       objective.forEach(data => {
         data.keyresults = []
         okr[data.id] = data
       })
       keyresult.forEach(data => {
+        data.active = keyresultIds.includes(data.id)
         okr[data.objective_id].keyresults.push(data)
       })
-      console.log(okr)
+      
+      okr = Object.values(okr)
       ctx.body = {code:200,data:okr}
     }catch(e){
       ctx.body = {code:0,message:'错误'}
