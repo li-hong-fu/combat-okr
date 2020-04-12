@@ -25,8 +25,12 @@ router.put('/okr/:id',auth.authentication,okrController.edit)
 router.delete('/okr/:id',auth.authentication,objectiveController.delete)
 router.post('/okr/:id',auth.authentication,objectiveController.update)
 
+router.get('/okr/item/:id',auth.authentication,okrController.showItem)
+
 router.delete('/okr/keyresult/:id',auth.authentication,keyresultController.delete)
 
 router.get('/okr/todo/:id/keyresult',auth.authentication,todoOkrController.show)
+router.post('/okr/todo/:id/keyresult',auth.authentication,todoOkrController.insert)
+router.put('/okr/todo/:id/keyresult',auth.authentication,todoOkrController.delete)
 
 module.exports = router

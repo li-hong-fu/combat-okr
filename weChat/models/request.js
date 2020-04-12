@@ -29,6 +29,6 @@ export default {
     return request('GET', url, data, header)
   },
   delete: function (url='', data, header={}) {
-    return request('DELETE', url, header)
+    return request('DELETE', url,header)
   }
 }

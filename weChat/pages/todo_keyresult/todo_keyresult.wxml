@@ -4,7 +4,7 @@
     <view class="objective-item" wx:for="{{okr}}" wx:key="{{item.id}}">
       <view class="objective-title">目标: {{item.title}}</view>
       <view class="keyresult-list">
-        <view class="keyresult-item {{ke.active ? 'active' : ''}}"
+        <view class="keyresult-item {{kr.active ? 'active' : ''}}"
           wx:for="{{item.keyresults}}"
           wx:for-item="kr"
           wx:for-index="krindex"

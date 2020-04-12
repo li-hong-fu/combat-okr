@@ -3,8 +3,9 @@ export default {
   login: `${PREFIX}/login`,
   todo: `${PREFIX}/todo`,
   todoIndex:(id) => `${PREFIX}/todo/${id}`,
-  okrShowIndex: `${PREFIX}/okr`,
-  okr:(id) => `${PREFIX}/okr/${id}`,
+  okr: `${PREFIX}/okr`,
+  okrItem:(id) => `${PREFIX}/okr/${id}`,
   keyresult:(id) => `${PREFIX}/okr/keyresult/${id}`,
-  todoOkr:(id) => `${PREFIX}/okr/todo/${id}/keyresult`
+  todoOkr:(id) => `${PREFIX}/okr/todo/${id}/keyresult`,
+  okrItemShow:(id) => `${PREFIX}/okr/item/${id}`
 }

@@ -1,4 +1,3 @@
-const { formatTime } = require('./../utils/date')
 const Objective = require('./../models/objective')
 const Keyresult = require('./../models/keyresult')
 const TodoKeyresult = require('./../models/todoKeyresult')
@@ -33,7 +32,31 @@ const todoOkrController = {
     }catch(e){
       ctx.body = {code:0,message:'错误'}
     }
-  }
+  },
+  insert:async function(ctx,next){
+    try{
+      let todo_id = ctx.request.body.todo_id
+      let keyresult_id = ctx.request.body.keyresult_id
+      await TodoKeyresult.insert({todo_id,keyresult_id})
+      ctx.body = {code:200,message:'添加成功'}
+    }catch(e){
+      console.log(
+        ctx.body = {code:0,message:'错误'}
+      )
+    }
+  },
+  delete:async function(ctx,next){
+    try{
+      let todo_id = ctx.request.body.todo_id
+      let keyresult_id = ctx.request.body.keyresult_id
+      await TodoKeyresult.select({todo_id,keyresult_id}).del()
+      ctx.body = {code:200,message:'删除成功'}
+    }catch(e){
+      console.log(
+        ctx.body = {code:0,message:'错误'}
+      )
+    }
+  },
 }
 
 module.exports = todoOkrController

@@ -1,5 +1,7 @@
 const Objective = require('./../models/objective')
 const Keyresult = require('./../models/keyresult')
+const Todo = require('./../models/todo')
+const TodoKeyresult = require('./../models/todoKeyresult')
 const { formatTime } = require('./../utils/date')
 
 const okrController = {
@@ -82,6 +84,45 @@ const okrController = {
       ctx.body = {code:200,message:'编辑成功!'}
     }catch(e){
       ctx.body = {code:0,message:'发生错误!'}
+    }
+  },
+  showItem: async function(ctx,next){
+    try{
+      let id = ctx.params.id
+      const objective = await Objective.select({id})
+      const keyresult = await Keyresult.select({objective_id:id})
+      let keyresult_id = keyresult.map(data => data.id)
+      const todoKeyresult = await TodoKeyresult.all().whereIn("keyresult_id",keyresult_id)
+      let todo_id = todoKeyresult.map(data => data.todo_id)
+      const todo = await Todo.all().whereIn('id',todo_id)
+
+      let okrItem = []
+      objective.forEach(data => {
+        data.keyresults = [],
+        data.todos = []
+        okrItem[data.id] = data
+      })
+
+      keyresult.forEach(data => {
+        okrItem[data.objective_id].keyresults.push(data)
+      })
+
+      let todoItem = []
+      todo.forEach(data => {
+        data.objective_id = id
+        todoItem[data.id] = data
+      })
+
+      todoItem.forEach(data => {
+        okrItem[data.objective_id].todos.push(data)
+      })
+
+      okrItem = Object.values(okrItem)
+
+      console.log(okrItem)
+      ctx.body = {code:200,data:okrItem}
+    }catch(e){
+      ctx.body = {code:0,message:'错误'}
     }
   }
 }
