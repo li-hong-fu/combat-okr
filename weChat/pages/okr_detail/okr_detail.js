@@ -17,5 +17,24 @@ Page({
       console.log(this.data.objective)
       console.log(this.data.okrDetail)
     })
+  },
+  handEdit:function(event){
+    let state = event.currentTarget.dataset.finished
+    let index = event.currentTarget.dataset.index
+    let id = event.currentTarget.dataset.id
+    console.log(state,index,id)
+    wx.showActionSheet({
+      itemList:['标记已完成'],
+      success(res){
+        console.log(res)
+        switch(res.tapIndex){
+          case 0:
+            
+        }
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   }
 })

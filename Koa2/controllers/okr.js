@@ -105,23 +105,22 @@ const okrController = {
 
       let todo_id = todoKeyresult.map(data => data.todo_id)
       const todo = await Todo.all().whereIn('id',todo_id)
-
+      console.log(todo)
       let keyresults = {}
       keyresult.forEach((data,index) => {
         data.todos =[]
         keyresults[index] = data
-        if(data.id == todoKeyresult[index].keyresult_id){
-          todoKeyresult.forEach(data => {
-            let todoId = data.todo_id
-            todo.forEach(data => {
-              if(todoId == data.id){
-                keyresults[index].todos.push(data)
-              }
-            })
-          })
-        }
+        todoKeyresult.forEach(data => {
+          if(keyresult[index].id == data.keyresult_id){
+            let todoIds = data.todo_id
+            todo.forEach(data =>{
+             if(todoIds == data.id){
+              keyresults[index].todos.push(data)
+             }
+           })
+          }
+        })
       })
-      console.log(keyresults)
      
       ctx.body = {code:200,data:objective,keyresults}
     }catch(e){

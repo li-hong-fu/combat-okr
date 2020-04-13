@@ -1,30 +1,28 @@
 <view class="page-container">
   <view class="page-content">
-    <view class="objective-item finished">
-      <view class="objextive-title">我想让网站打开速度快一些</view>
-      <view class="objective-created_time">· 创建时间：2019/03/31</view>
-      <view class="objective-created_time">· 完成时间：2019/03/31</view>
+    <view class="objective-item finished" wx:for="{{objective}}" wx:key="{{item.id}}">
+      <view class="objextive-title">{{item.title}}</view>
+      <view class="objective-created_time">· 创建时间：{{item.created_time}}</view>
+      <view class="objective-created_time">· 完成时间：{{item.finished_time}}</view>
     </view>
     <view class="keyresult-list">
-      <view class="keyresult-item finished">
+      <view class="keyresult-item {{item.state ? 'finished' : ''}}"
+        wx:for="{{okrDetail}}"
+        wx:key="{{item.id}}"
+        data-index="{{index}}"
+        data-finished="{{item.state}}"
+        data-id="{{item.id}}"
+        bindtap="handEdit">
         <view class="keyresult-info">
-          <view class="keyresult-title">打开速度快30%</view>
+          <view class="keyresult-title">{{item.title}}</view>
           <view class="keyresult-tag">点击标记</view>
         </view>
         <view class="todo-list">
-          <view class="todo-item">
-            <view class="todo-title finished">JavaScript代码压缩</view>
-          </view>
-        </view>
-      </view>
-      <view class="keyresult-item finished">
-        <view class="keyresult-info">
-          <view class="keyresult-title">打开速度快30%</view>
-          <view class="keyresult-tag">点击标记</view>
-        </view>
-        <view class="todo-list">
-          <view class="todo-item">
-            <view class="todo-title">JavaScript代码压缩</view>
+          <view class="todo-item"
+            wx:for="{{item.todos}}"
+            wx:for-item="td"
+            wx:key="{{td.id}}">
+            <view class="todo-title {{td.state === 1 ? 'finished' : ''}}">{{td.title}}</view>
           </view>
         </view>
       </view>
