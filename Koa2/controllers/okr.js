@@ -90,37 +90,40 @@ const okrController = {
     try{
       let id = ctx.params.id
       const objective = await Objective.select({id})
+      objective.forEach(data => {
+        if(data.created_time){
+          data.created_time = formatTime(data.created_time)
+        }
+        if(data.finished_time){
+          data.finished_time = formatTime(data.finished_time)
+        }
+      })
+
       const keyresult = await Keyresult.select({objective_id:id})
-      let keyresult_id = keyresult.map(data => data.id)
-      const todoKeyresult = await TodoKeyresult.all().whereIn("keyresult_id",keyresult_id)
+      let keyresult_ids = keyresult.map(data => data.id)
+      const todoKeyresult = await TodoKeyresult.all().whereIn("keyresult_id",keyresult_ids)
+
       let todo_id = todoKeyresult.map(data => data.todo_id)
       const todo = await Todo.all().whereIn('id',todo_id)
 
-      let okrItem = []
-      objective.forEach(data => {
-        data.keyresults = [],
-        data.todos = []
-        okrItem[data.id] = data
+      let keyresults = {}
+      keyresult.forEach((data,index) => {
+        data.todos =[]
+        keyresults[index] = data
+        if(data.id == todoKeyresult[index].keyresult_id){
+          todoKeyresult.forEach(data => {
+            let todoId = data.todo_id
+            todo.forEach(data => {
+              if(todoId == data.id){
+                keyresults[index].todos.push(data)
+              }
+            })
+          })
+        }
       })
-
-      keyresult.forEach(data => {
-        okrItem[data.objective_id].keyresults.push(data)
-      })
-
-      let todoItem = []
-      todo.forEach(data => {
-        data.objective_id = id
-        todoItem[data.id] = data
-      })
-
-      todoItem.forEach(data => {
-        okrItem[data.objective_id].todos.push(data)
-      })
-
-      okrItem = Object.values(okrItem)
-
-      console.log(okrItem)
-      ctx.body = {code:200,data:okrItem}
+      console.log(keyresults)
+     
+      ctx.body = {code:200,data:objective,keyresults}
     }catch(e){
       ctx.body = {code:0,message:'错误'}
     }
