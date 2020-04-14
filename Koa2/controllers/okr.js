@@ -105,7 +105,7 @@ const okrController = {
 
       let todo_id = todoKeyresult.map(data => data.todo_id)
       const todo = await Todo.all().whereIn('id',todo_id)
-      console.log(todo)
+      
       let keyresults = {}
       keyresult.forEach((data,index) => {
         data.todos =[]

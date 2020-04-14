@@ -17,7 +17,7 @@ const objectiveController = {
     try{
       let id = ctx.params.id
       let state = ctx.request.body.state
-      let finished_time = new Date()
+      let finished_time = state ? new Date() : null
       await Objective.update(id,{state,finished_time})
       await Keyresult.select({objective_id:id}).update({state,finished_time})
       ctx.body = {code:200,message:'成功!'}
